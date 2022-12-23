@@ -11,10 +11,14 @@
 <body>
     <div class="header">Etch-A-Sketch</div>
     <div class="options">
-        <div class="size">Size</div>
+        <div class="size">
+            <div class="size-display"></div>
+            <input type="range" min="16" max="100" value="16" class="size-input">
+        </div>
         <div class="clear">Clear</div>
+        <div class="color">Color</div>
+        <div class="in-circle tooltip fade" data-title="Click on the grid to start/stop drawing">?</div>
     </div>
     <div class="grid"></div>
-    <div class="color">Color</div>
 </body>
 </html>
