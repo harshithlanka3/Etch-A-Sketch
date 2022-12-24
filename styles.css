@@ -28,6 +28,10 @@ body {
     transition: opacity .2s;
 }
 
+.size-display {
+    user-select: none;
+}
+
 .size-input:hover {
     opacity: 1;
   }
@@ -73,7 +77,8 @@ body {
     padding-bottom: 5px;
     border-radius: 13px;
     background-color: #ffe9a2;
-    transition: all .2s ease-in-out; 
+    transition: all .2s ease-in-out;
+    user-select: none;
 }
 
 .clear:hover, .eraser:hover, .rainbow:hover {
@@ -81,7 +86,7 @@ body {
     opacity: 1;
 }
 
-.clear:active, .eraser:active, .clear:active {
+.clear:active, .eraser:active, .rainbow:active {
     transition: transform 0.05s ease-in-out;
     transform: scale(1);
 }
@@ -97,6 +102,7 @@ body {
     text-align: center;
     font-size: 20px;
     font-family: Verdana;
+    user-select: none;
 }
 
 .tooltip {
@@ -146,6 +152,7 @@ body {
     width: 150px;
     border-radius: 10px;
     background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    filter: brightness(75%);
     color: aliceblue;
     text-align: center;
     text-shadow:
@@ -153,6 +160,7 @@ body {
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
+    user-select: none;
 }
 
 .grid {

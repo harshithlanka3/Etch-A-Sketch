@@ -8,7 +8,6 @@ let isDrawing = false;
 let color = DEFAULTCOLOR;
 let pressed = false;
 let isRainbow = false;
-let isErase = false;
 
 // DOM references
 const grid = document.querySelector('.grid');
@@ -38,7 +37,7 @@ grid.addEventListener('click', () => {
 
 function draw(e) {
     if (!isDrawing) return;
-    if (isErase) {
+    if (pressed) {
         color = 'white';
         this.style = `background-color: ${color}`;
         return;
@@ -77,7 +76,6 @@ function clearGrid() {
 
 function erase(e) {
     pressed = !pressed;
-    isErase = !isErase;
     if (pressed) {
         this.style = 'background-color: #f9cc38';
         color = 'white';
@@ -91,8 +89,10 @@ function erase(e) {
 function rainbowMode(e) {
     isRainbow = !isRainbow;
     if (isRainbow) {
+        this.style = 'filter: brightness(100%)';
         color = 'black';
     } else {
+        this.style = 'filter: brightness(75%);'
         color = randomColor();
     }
 }
