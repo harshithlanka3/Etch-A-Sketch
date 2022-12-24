@@ -1,12 +1,12 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Helvetica', sans-serif;
     align-items: center;
-      font-family: 'Helvetica', sans-serif;
 }
 
 .header {
-    font-size: 52px;
+    font-size: 36px;
 }
 
 .in-circle {
@@ -72,24 +72,39 @@ body {
     padding: 15px 0px 35px 0px;
 }
 
-.clear {
-    width: 50px;
+.removal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.clear, .eraser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
     height: 20px;
-    text-align: center;
+    padding-bottom: 5px;
     border-radius: 13px;
     background-color: #ffe9a2;
     transition: all .2s ease-in-out; 
 }
 
-.clear:hover {
+.clear:hover, .eraser:hover {
     transform: scale(1.1);
     opacity: 1;
+}
+
+.clear:active, .eraser:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(1);
 }
 
 .size {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .size-input {
@@ -124,15 +139,24 @@ body {
     border-radius: 50%;
     background: #ffe9a2;
     cursor: pointer;
-  }
+}
+
+.pallette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
 .grid {
     border-style: solid;
     border-color: beige;
     display: grid;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex-shrink: 0;
 }
 
 .grid-item {

@@ -1,12 +1,16 @@
 const DEFAULTSIZE = 16;
+const DEFAULTCOLOR = 'black';
 
 let size = DEFAULTSIZE;
 let isDrawing = false;
+let color = DEFAULTCOLOR;
+let pressed = false;
 
 const grid = document.querySelector('.grid');
 const sizeInput = document.querySelector('.size-input');
 const sizeDisplay = document.querySelector('.size-display');
 const clear = document.querySelector('.clear');
+const eraser = document.querySelector('.eraser');
 
 sizeDisplay.textContent = `Size: ${DEFAULTSIZE}x${DEFAULTSIZE}`;
 
@@ -21,6 +25,8 @@ grid.addEventListener('click', () => {
 });
 
 clear.addEventListener('click', resetGrid);
+
+eraser.addEventListener('click', erase);
 
 function resetGrid() {
     clearGrid();
@@ -50,8 +56,18 @@ function createGrid(size) {
 
 function draw(e) {
     if (!isDrawing) return;
-    this.style = "background-color: black";
+    this.style = `background-color: ${color}`;
 }
 
+function erase(e) {
+    pressed = !pressed;
+    if (pressed) {
+        this.style = 'background-color: #f9cc38';
+        color = 'white';
+    } else {
+        this.style = 'background-color: #ffe9a2';
+        color = 'black';
+    }
+}
 
 createGrid(size);
